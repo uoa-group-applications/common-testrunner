@@ -11,7 +11,7 @@
 	<groupId>nz.ac.auckland.common</groupId>
 	<artifactId>common-testrunner</artifactId>
 	<packaging>jar</packaging>
-	<version>1.4-SNAPSHOT</version>
+	<version>2.1-SNAPSHOT</version>
 
 	<description>
 		This package provides two test runners - one for integration testing (initialises 
@@ -29,6 +29,12 @@
 
 		<dependency>
 			<groupId>nz.ac.auckland.composite</groupId>
+			<artifactId>composite-spring</artifactId>
+			<version>[5,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>nz.ac.auckland.composite</groupId>
 			<artifactId>composite-spring-test</artifactId>
 			<version>[5,)</version>
 		</dependency>
@@ -40,15 +46,15 @@
 		</dependency>
 
 		<dependency>
-			<groupId>nz.ac.auckland.common</groupId>
-			<artifactId>common-scanner</artifactId>
-			<version>[1.6,)</version>
+			<groupId>com.bluetrainsoftware</groupId>
+			<artifactId>classpath-scanner</artifactId>
+			<version>[1.2,)</version>
 		</dependency>
 
 		<dependency>
-			<groupId>nz.ac.auckland.common</groupId>
-			<artifactId>common-agent-loader</artifactId>
-			<version>[1.3,)</version>
+			<groupId>com.bluetrainsoftware.bathe</groupId>
+			<artifactId>bathe-booter</artifactId>
+			<version>[1.2,)</version>
 		</dependency>
 
 	</dependencies>

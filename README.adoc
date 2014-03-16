@@ -1,0 +1,39 @@
+= common-testrunner
+
+== Purpose
+This artifact has been revamped and has lost some of its classes. This has happened because it is important to
+understand the limitations of interrupting the JUnit running mechanism.
+
+This has arisen out of easily running the initializers that are in your classpath with command line settings that
+you can configure for each test case as you need.
+
+WARNING: Watch out for the +SpringJUnit4Runner+ - it prevents lazy loading of Java Agents for some reason, do not use
+it unless you absolutely have to.
+
+== Available
+
+There are two JUnit4 Runners available +SimpleTestRunner+ and +SimpleSpringRunner+.
+
+== Configuration
+
+If you annotate your class with
+
+[source,java]
+.YourClass.java
+----
+@BatheCommandLine(["-Pclasspath:/war.properties", "-P$home/.webdev/fat.properties"])
+@RunWith(SimpleSpringRunner.class)
+public class YourClass {
+
+  @Test
+  public void blah() {}
+}
+----
+
+Then you will get the listed parameters passed to the initializers that are in your classpath. Remember you can disable
+an initializer using
+
+[source]
+----
+bathe.disable.elastic=anything
+----

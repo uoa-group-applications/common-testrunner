@@ -42,12 +42,11 @@ public class BatheTestUtils {
 
     }
 
-	public static void init(Class<?> klass) {
-
+    public static void init(Class<?> klass) {
         String userHome = System.getProperty("user.home");
         Properties homeOnlyProperty = new Properties();
         homeOnlyProperty.setProperty("$home",userHome);
-
+	
         init(klass, homeOnlyProperty);
-	}
+    }
 }
